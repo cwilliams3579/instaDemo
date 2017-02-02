@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :plays
+  resources :plays do
+    resources :reviews
+    
+  end
   get 'plays/index'
 
   get 'plays/show'
