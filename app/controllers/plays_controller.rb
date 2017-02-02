@@ -5,11 +5,11 @@ class PlaysController < ApplicationController
   end
 
   def new
-    @play = current_user.play.build
+    @play = current_user.plays.build
   end
 
   def create
-    @play = current_user.play.build(play_params)
+    @play = current_user.plays.build(play_params)
     respond_to do |format|
       if @play.save
         format.html { redirect_to @play, notice: 'Post was successfully created.' }
