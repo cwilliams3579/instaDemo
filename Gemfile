@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form'
 gem 'bcrypt'
 gem 'devise'
+gem 'paperclip', '~> 5.1'
 group :development, :test do
   gem 'byebug', platform: :mri
 end

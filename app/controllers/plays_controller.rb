@@ -58,11 +58,7 @@ class PlaysController < ApplicationController
     @play = Play.find(params[:id])
   end
 
-  # def set_category
-  #   @play.category_id = params[:category_id]
-  # end
-
   def play_params
-    params.require(:play).permit(:title, :description, :director, :category)
+    params.require(:play).permit(:title, :description, :director, :category_id, :play_img)
   end
 end
