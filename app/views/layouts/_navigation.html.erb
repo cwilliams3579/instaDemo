@@ -1,19 +1,30 @@
-<%# navigation styled for Bootstrap 3.0 %>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to 'Home', root_path, class: 'navbar-brand' %>
-    </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <%= render 'layouts/navigation_links' %>
-      </ul>
+<div id="nav" class="nav">
+  <div class="icon">
+    <ul>
+      <li><a title="Home" href="#"><i class="fa fa-home "></i></a></li>
+      <li><a href="About"><i class="fa fa-search "></i></a></li>
+      <li><a href="#"><i class="fa fa-edit "></i></a></li>
+      <li><a href="#"><i class="fa fa-cog "></i></a></li>
+
+    </ul>
+  </div>
+  <div class="text">
+    <ul>
+      <li><a title="Home" href="#">Home</a></li>
+      <li><a href="#" >Search</a>
+      </li>
+      <li><a href="#" >Contact</a>
+      </li>
+      <li><a href="#" >Settings</a>
+      </li>
+    </ul>
+  </div>
+  <div class="info">
+    <div class="logo"><p>LOGO</p></div>
+    <div class="name">Co. Name</div>
+    <div class="quote">WHAT WE DO IS WHO WE ARE</div>
+    <div class="social">
+      <a target="_blank" href="https://twitter.com/tmrDevelops"><i class="fa fa-twitter"></i></a>
     </div>
   </div>
-</nav>
+</div>
