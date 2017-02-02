@@ -1,15 +1,18 @@
 class PlaysController < ApplicationController
   before_action :find_play, only: [:show, :edit, :update, :destroy]
+  # before_action :set_category, only: [:show, :edit, :update, :destroy]
   def index
     @plays = Play.all.order("created_at DESC")
   end
 
   def new
     @play = current_user.plays.build
+    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
   def create
     @play = current_user.plays.build(play_params)
+    @play.category_id = params[:category_id]
     respond_to do |format|
       if @play.save
         format.html { redirect_to @play, notice: 'Post was successfully created.' }
@@ -22,10 +25,11 @@ class PlaysController < ApplicationController
   end
 
   def edit
-
+    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
   def update
+    @play.category_id = params[:category_id]
     if @play.update(play_params)
       flash[:notice] = "Successfully updated"
       redirect_to plays_path
@@ -49,7 +53,11 @@ class PlaysController < ApplicationController
     @play = Play.find(params[:id])
   end
 
+  # def set_category
+  #   @play.category_id = params[:category_id]
+  # end
+
   def play_params
-    params.require(:play).permit(:title, :description, :director)
+    params.require(:play).permit(:title, :description, :director, :category)
   end
 end

@@ -1,10 +1,10 @@
-<h1>Plays#show</h1>
 <div class="container text-center">
   <div class="row">
     <div class="col-md-4">
       <h2 class="text-center"><%= @play.title %></h2>
-      <p class="text-center"><%= @play.director %></p>
-      <h3 class="text-center"><%= @play.description %></h3>
+      <h3 class="text-center"><%= @play.director %></h3>
+      <h4 class="text-center"><%= @play.category.name %></h4>
+      <p class="text-center"><%= @play.description %></p>
       <% if user_signed_in? %>
         <% if @play.user_id == current_user.id %>
           <%= link_to 'Edit', edit_play_path(@play), class: "btn btn-primary waves-effect" %>

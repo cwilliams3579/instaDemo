@@ -1,10 +1,11 @@
 <div id="nav" class="nav">
   <div class="icon">
     <ul>
-      <li><a title="Home" href="#"><i class="fa fa-home wow bounceInDown"></i></a></li>
+      <li><a title="Dashboard" href="#"><i class="fa fa-tachometer wow bounceInDown"></i></a></li>
       <% if user_signed_in? %>
-        <li><a href="#"><i class="fa fa-plus wow bounceInDown"></i></a></li>
+      <li><a href="#"><i class="fa fa-edit wow bounceInDown"></i></a></li>
         <li><a href="#"><i class="fa fa-edit wow bounceInDown"></i></a></li>
+        <li><a href="#"><i class="fa fa-plus wow bounceInDown"></i></a></li>
         <li><a href="#"><i class="fa fa-cogs wow bounceInDown"></i></a></li>
         <li><a href="#"><i class="fa fa-sign-out wow bounceInDown"></i></a></li>
       <% else %>
@@ -15,13 +16,25 @@
   </div>
   <div class="text">
     <ul>
-      <li><a title="Home" href="/">Home</a></li>
+      <li><a title="Home" href="/">Dashboard</a></li>
+      <li>
+        <%= link_to 'Play', plays_path %>
+      </li>
       <% if user_signed_in? %>
+      <!-- Single button -->
+          <li class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle nav-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categories <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+            <% Category.all.each do |category| %>
+              <li class="<%= 'active' if params[:category] == category.name %>"></li>
+              <li><%= link_to category.name, plays_path(category: category.name) %></li>
+            <% end %>
+            </ul>
+          </li>
         <li>
           <%= link_to 'Add Play', new_play_path %>
-        </li>
-        <li>
-          <%= link_to 'Edit', new_play_path %>
         </li>
         <li>
           <%= link_to 'Settings', edit_user_registration_path %>

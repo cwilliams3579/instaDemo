@@ -9,9 +9,12 @@
     <%= csrf_meta_tags %>
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="http://cdn.jsdelivr.net/wow/1.1.2/wow.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://cdn.jsdelivr.net/scrollorama/0.1/jquery.scrollorama.js"></script>
+
     <script>
       new WOW().init();
     </script>
@@ -26,6 +29,6 @@
          <%= yield %>
       </main>
     </div>
-    <%= render 'layouts/footer' %>
+    <%#= render 'layouts/footer' %>
   </body>
 </html>
