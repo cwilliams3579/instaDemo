@@ -14,7 +14,7 @@ body{
     & h1{
     text-align:center;
     margin-top:35px;
-    color: #fff;
+    color: $primary-color;
     letter-spacing:1px;
     text-shadow:1px 1px hsla(212, 5%, 95%, 1),
       -1px -1px hsla(212, 5%, 95%, 1);
@@ -117,7 +117,8 @@ body{
       width:100px;
       height:100px;
       margin:0 auto;
-      background:hsla(0,0%,15%,1);
+      // background:hsla(0,0%,15%,1);
+      // background-image: url(ninja.png);
       color: #fff;
       opacity:.6;
       overflow:hidden;

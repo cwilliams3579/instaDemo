@@ -14,6 +14,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'simple_form'
 gem 'bcrypt'
+gem 'devise'
 group :development, :test do
   gem 'byebug', platform: :mri
 end
@@ -29,6 +30,7 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem 'high_voltage'
 group :development do
   gem 'better_errors'
+  gem 'faker'
   gem 'hub', :require=>nil
   gem 'rails_layout'
 end
