@@ -13,6 +13,19 @@
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="reviews">
+      <h1> Reviews </h1>
+      <%= render @play.reviews %>
+      <div class="">
+        <%= link_to "Add Reviews", new_play_review_path(@play), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="links center btn-group">
   <% if user_signed_in? %>
     <% if @play.user_id == current_user.id %>
@@ -22,3 +35,12 @@
   <% end %>
 </div>
 <%= link_to 'Back', root_path, class: "btn btn-link" %>
+<script>
+  $('.review-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>

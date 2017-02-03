@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'bcrypt'
 gem 'devise'
 gem 'paperclip', '~> 5.1'
+gem 'acts_as_votable'
 group :development, :test do
   gem 'byebug', platform: :mri
 end
@@ -31,6 +32,7 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem 'high_voltage'
 group :development do
   gem 'better_errors'
+  gem "binding_of_caller"
   gem 'faker'
   gem 'hub', :require=>nil
   gem 'rails_layout'
